@@ -31,3 +31,18 @@ conda activate qs-01
 ```
 pip install -r requirements.txt
 ```
+
+## start docker container and run your code there
+in native terminal run
+```
+docker build -t image_name .
+docker run --platform linux/amd64 -it --rm image_name
+```
+
+then in the docker image run necessary commands such as
+```
+conda env create -f environment.yml
+conda activate mycondaenv
+cd ./example/H2/
+python h2.py
+```
